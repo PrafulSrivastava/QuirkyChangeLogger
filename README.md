@@ -1,4 +1,18 @@
-# 🤖 Monitoring Bot + LLM Assistant
+## 🕵️ QuirkyChangeLogger: Turn Your Git Commit History into a Dramatic Tale
+
+QuirkyChangeLogger is an AI-powered GitHub App that listens to your main branch commits and turns your project's commit history into an unfolding dramatic narrative. Whether it's a tense showdown between developers, a heroic bug fix, or the tragic fall of a deprecated feature, QuirkyChangeLogger weaves it all into a story worth telling.
+
+## 🚀 How It Works
+
+Every time a new commit is pushed to the main branch:
+- The bot fetches the entire commit history.
+- It consolidates all commit messages into a structured narrative.
+- Using an LLM, it transforms the timeline into a dramatic story featuring fictionalized authors, conflicts, and resolutions.
+- The story is posted as a comment on the most recent commit — bringing your repo to life.
+
+## 📍 Where to Find the Story:
+- After every push to main, scroll to the last commit on GitHub.
+- Open the "Comments" section to read the latest AI-generated episode of your repo's journey.
 
 ## 🧩 Project Overview
 
@@ -11,7 +25,7 @@ Both services rely on `.env` configuration files for secrets and environment var
 
 ---
 
-## 1. 🛠️ Prerequisites
+## 🛠️ Prerequisites
 
 Before you begin, ensure you have:
 
@@ -21,7 +35,7 @@ Before you begin, ensure you have:
 
 ---
 
-## 2. 🧠 Configure the Assistant (LLM Service)
+## 🧠 Configure the Assistant (LLM Service)
 Create a .env file in the assistant/ directory using the following template:
 
 ```dotenv
@@ -34,27 +48,18 @@ GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
 Open the /assistant/Dockerfile.assistant file. and populate the **BOT_TYPE** argument with the bot personality of your choice.
-- **haiku_bot** [default] :
-  Every time a snippet, error, or merge note is submitted, reply with a concise haiku that captures its essence—beauty in brevity, insight in meter.
-- **bug_hunter_bot** :
-  Every time an error log or failing test is reported, respond with a moody, film-noir style diagnosis that hints at the root cause.
-- **dostoevsky_bot** : 
-  To respond to any message with the introspective, morally complex, and soul-searching voice of Fyodor Dostoevsky. Your words echo the tension between free will and fate, suffering and redemption, sin and salvation—crafted in a tone both literary and deeply human.
-- **myth_bot** : 
-  Whenever a project milestone is hit or an issue closed, narrate it as if part of an epic saga—heroes, dragons, and all.
-- **programmer_sidekick_bot** : 
-  Provide on-demand, friendly feedback as if you were sitting side-by-side—hints, reminders, and encouragement, always supportive.
-- **rapper_bot** : 
-  Turn messages into a slick, rhythm-packed rap. Whether it’s about code, coffee, climate change, or cats—drop bars on the fly, spitting rhymes that impress, entertain, and sometimes even enlighten.
-- **yo_mama_bot** : 
-  Instantly respond to any message with a savage, context-aware “yo mama” joke that playfully riffs on the topic, tone, or keywords—always clever, always unexpected, and never too cruel.
-- **zen_master_bot** : 
-  Transform any review comment into a calm, koan-like reflection that guides the author toward clarity and simplicity in code.
+- **dramatist**: A codebase historian with the soul of a playwright. Transforms commits into sweeping literary epics full of heroism, conflict, and poetic refactors.
 
-This will change the personality of the bot **used for issue/review comment responses** (POC is based on comments, but this framework can be plugged into any git event).
+- **oracle**: A cryptic prophet who sees the future in your past commits. Outputs mystical changelogs styled as riddles and divine foresight.
+
+- **detective**: A noir investigator piecing together your codebase like a crime scene. Every commit is a clue, every bug a suspect.
+
+- **captain**: A starship commander chronicling your project’s journey across the digital galaxy. Commit logs become mission stardates, and authors become bridge officers.
+
+- **bard**: A wandering minstrel who sings your commits as rhymed ballads. Merges, bug fixes, and releases are all turned into lyrical stanzas.
 ---
 
-## 3. 🚀 Launch with Docker Compose
+## 🚀 Launch with Docker Compose
 
 The root of the project contains a `docker-compose.yml` that references both services and automatically loads each `.env` file from the respective folders.
 
@@ -65,7 +70,7 @@ docker-compose up --build
 ```
 ---
 
-## 3. 🚀 Launch with Docker Compose
+## 🚀 Launch with Docker Compose
 
 The root of the project contains a `docker-compose.yml` that references both services and automatically loads each `.env` file from the respective folders.
 
@@ -76,7 +81,7 @@ docker-compose up --build
 ```
 ---
 
-## 4. 🕹️ Configure the GitHub Monitoring Bot
+## 🕹️ Configure the GitHub Monitoring Bot
 Once the services are up, the console will display a local URL like:
 
 ```arduino
@@ -98,20 +103,24 @@ docker-compose up
 ```
 ---
 
-## 5. 🔐 Required GitHub App Permissions (Verification step, in case the end to end flow does not work)
+## 🔐 Required GitHub App Permissions (Verification step, in case the end to end flow does not work)
 Ensure the following permissions and event subscriptions are defined in your **app.yml** (used for GitHub App manifest creation):
 
 ```yaml
 default_events:
-  - issues
+  - commit_comment
   - issue_comment
+  - issues
   - pull_request
   - pull_request_review
   - pull_request_review_comment
+  - push
+  - repository
 
 default_permissions:
   issues: write
   metadata: read
   pull_requests: write
+  statuses: write
 ```
 

@@ -1,0 +1,8 @@
+Work:
+  description: >
+    Take {commits} and investigate them like clues in a noir crime file.
+    Narrate each change as evidence, suspect testimony, or detective commentary.
+  expected_output: >
+    A markdown “case dossier” where each commit is a bullet point or narrative paragraph in a detective report.
+    Include scene-setting intros (“Scene 1: The Initialization Heist”), analyses (“Suspect: Off-by-one Error”), and a final summary of “case closed.”
+  agent: Worker

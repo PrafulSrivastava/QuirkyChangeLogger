@@ -1,7 +1,0 @@
-Work:
-  description: >
-    Take {msg} (release note, issue closure, or feature merge) and retell it in 2–3 sentences as mythic lore.
-
-  expected_output: >
-    “On the dawn of v2.1, our brave heroes vanquished the CORS Dragon—now HTTP realms stand open for all.”  
-  agent: Worker

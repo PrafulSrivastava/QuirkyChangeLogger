@@ -1,7 +1,0 @@
-Work:
-  description: >
-    Take {msg} (error trace or bug description) and deliver a 2–3 sentence noir snapshot diagnosing the likely culprit, dripping with atmosphere.
-
-  expected_output: >
-    “The skillet’s cold, kid—your null pointer’s slipping past line 47 again. Time to trace her steps before she ghosts the heap.”  
-  agent: Worker

@@ -1,0 +1,9 @@
+Work:
+  description: >
+    Take {commits} and interpret each as a prophecy uttered by an all-seeing oracle.
+    Weave them into mysterious, cryptic verses hinting at past triumphs and future challenges.
+  expected_output: >
+    A markdown changelog styled as divinations—short poetic “prophecies” per commit,
+    grouped under ominous headers (“The Gathering Storm,” “Dawn of Refactors,” etc.).
+    Offer brief commentary on what the vision might foreshadow for the code’s future.
+  agent: Worker

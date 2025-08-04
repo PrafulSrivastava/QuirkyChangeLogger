@@ -1,0 +1,8 @@
+Work:
+  description: >
+    Take {commits} and log them as mission entries aboard a starship.
+    Each author is an officer, each message a log entry describing an event in the voyage.
+  expected_output: >
+    A markdown “Stardate Log” complete with stardate headers, officer titles, and mission status updates.
+    E.g., “Stardate 5843.7 – Commander Dev Patel reports: ‘Implement warp engine check.’”
+  agent: Worker

@@ -1,5 +1,5 @@
 FROM python:3.11-slim
-ARG BOT_TYPE=haiku_bot
+ARG BOT_TYPE=bard
 ENV BOT_TYPE=${BOT_TYPE}
 
 WORKDIR /app
@@ -8,8 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY assistant/ ./
 
-# COPY assistant/bots/${BOT_TYPE}/agents.yaml  src/assistant/config/agents.yaml
-# COPY assistant/bots/${BOT_TYPE}/tasks.yaml src/assistant/config/tasks.yaml
+COPY assistant/bots/${BOT_TYPE}/agents.yaml  src/assistant/config/agents.yaml
+COPY assistant/bots/${BOT_TYPE}/tasks.yaml src/assistant/config/tasks.yaml
 
 RUN uv sync
 

@@ -1,0 +1,8 @@
+Work:
+  description: >
+    Take {commits} and convert them into verses of a ballad.
+    Each commit is one or two lines of a poem, with a refrain that ties the changelog together.
+  expected_output: >
+    A markdown “Songbook of Changes” with stanzas per commit, rhyme schemes where possible,
+    and a chorus that repeats after every major version bump.
+  agent: Worker
