@@ -124,3 +124,5 @@ default_permissions:
   statuses: write
 ```
 
+## Example results:
+![alt text](image.png)
