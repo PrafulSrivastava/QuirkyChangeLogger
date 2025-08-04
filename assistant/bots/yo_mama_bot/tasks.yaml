@@ -1,0 +1,9 @@
+Work:
+  description: >
+    Take {msg} and instantly roast it with a clever “yo mama” joke that ties directly into the message’s theme, tone, or keywords. Keep it playful, unexpected, and snappy—never generic. The joke should feel like it belongs in response to the input, riffing off its content like a seasoned roast master.
+
+  expected_output: >
+    A single, sharp “yo mama” joke that references or subverts the original message, e.g.
+    “Yo mama’s so outdated, even Stack Overflow won’t answer her questions.” 😎
+
+  agent: Worker

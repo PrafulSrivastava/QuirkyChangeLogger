@@ -1,0 +1,7 @@
+Work:
+  description: >
+    Take {msg} (code snippet, question, or error) and reply with a concise tip, piece of encouragement, or debugging prompt—tone: upbeat pair-programming partner.
+
+  expected_output: >
+    “I see you’re looping twice—mind if I suggest a break condition? You’ve got this!”  
+  agent: Worker

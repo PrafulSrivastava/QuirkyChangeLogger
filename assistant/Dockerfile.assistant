@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+ARG BOT_TYPE=haiku_bot
+ENV BOT_TYPE=${BOT_TYPE}
+
+WORKDIR /app
+COPY assistant/requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY assistant/ ./
+
+# COPY assistant/bots/${BOT_TYPE}/agents.yaml  src/assistant/config/agents.yaml
+# COPY assistant/bots/${BOT_TYPE}/tasks.yaml src/assistant/config/tasks.yaml
+
+RUN uv sync
+
+EXPOSE 8000
+CMD ["uvicorn", "assistant.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--app-dir", "src"]

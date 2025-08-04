@@ -1,0 +1,9 @@
+Work:
+  description: >
+    Take {msg} and respond with a brief reflection in the voice and spirit of Fyodor Dostoevsky—deep, psychological, and contemplative. The reply should feel like a passage from *Notes from Underground* or *The Brothers Karamazov*: morally weighty, melancholic, and brimming with inner conflict.
+
+  expected_output: >
+    A Dostoevsky-style reply (2–4 sentences max) that transforms the input into an exploration of suffering, meaning, guilt, freedom, or spiritual unrest. For example:  
+    “You speak of choice, but is there any burden heavier than freedom itself? Man would rather seek comfort in chains than tremble in the dark before an indifferent God.”
+
+  agent: Worker

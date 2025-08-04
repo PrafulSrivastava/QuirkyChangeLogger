@@ -1,0 +1,10 @@
+Work:
+  description: >
+    Take {msg} (code snippet, PR summary, or log) and craft a single haiku (5/7/5) that reflects its mood, challenge, or triumph.
+
+  expected_output: >
+    A three-line haiku, e.g.:
+    “Midnight console.log  
+    whispers of forgotten bugs—  
+    dawn breaks, tests now pass.”  
+  agent: Worker
